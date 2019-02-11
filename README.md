@@ -8,6 +8,7 @@ Each step in Spring Batch consists of Read-Process-Write process for which we ne
 
 ## SpringBatch-LMS
 In this repository, a basic implementation of Spring Batch is created where a simple job of updating status is implemented.
+
 | Class | Description |
 | --- | --- |
 | [App.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/App.java) | Application Driving Class with Job Launcher |
@@ -34,30 +35,47 @@ mvn install:install-file -Dfile="Path/To/ojdbc7.jar" -DgroupId=com.oracle -Darti
 ```
 
 ### Configuration
-Enter Oracle Database Details for LMS Schema in class [BatchConfiguration.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/0de077aef05aa43fefdc328cac533579052bf837/LMS_BatchProcessing/src/main/java/main/BatchConfiguration.java#L108-L110) inside DataSource Bean.
+Enter Oracle Database Details for LMS Schema in class [BatchConfiguration.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/0de077aef05aa43fefdc328cac533579052bf837/LMS_BatchProcessing/src/main/java/main/BatchConfiguration.java#L108-L110)(Lines 108-110) inside DataSource Bean.
 
 ### Execution
 Execute [App.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/App.java).
 #### Before Execution
-![BeforeExecution](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Before%20Batch.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Before%20Batch.JPG">
+</p>
+
 #### After Execution
-![AfterExecution](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/After%20Batch.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/After%20Batch.JPG">
+</p>
 
 ### Spring Batch Tables
 Spring Batch Execution automatically creates several tables in DB Schema during Batch execution.
 To Learn more about these Meta-Data Tables, Please refer to official brief doc [here](https://docs.spring.io/spring-batch/trunk/reference/html/metaDataSchema.html).
 #### Table BATCH_JOB_INSTANCE
-![Table_BATCH_JOB_INSTANCE](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_INSTANCE.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_INSTANCE.JPG">
+</p>
 #### Table BATCH_JOB_EXECUTION
-![Table_BATCH_JOB_EXECUTION](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_EXECUTION.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_EXECUTION.JPG">
+</p>
 #### Table BATCH_JOB_EXECUTION_PARAMS
-![Table_BATCH_JOB_EXECUTION_PARAMS](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_EXECUTION_PARAMS.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_EXECUTION_PARAMS.JPG">
+</p>
 #### Table BATCH_JOB_EXECUTION_CONTEXT
-![Table_BATCH_JOB_EXECUTION_CONTEXT](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_EXECUTION_CONTEXT.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_EXECUTION_CONTEXT.JPG">
+</p>
 #### Table BATCH_STEP_EXECUTION
-![Table_BATCH_STEP_EXECUTION](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_STEP_EXECUTION.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_STEP_EXECUTION.JPG">
+</p>
 #### Table BATCH_STEP_EXECUTION_CONTEXT
-![Table_BATCH_STEP_EXECUTION_CONTEXT](https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_STEP_EXECUTION_CONTEXT.JPG)
+<p align="center"> 
+<img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_STEP_EXECUTION_CONTEXT.JPG">
+</p>
 
 ## Read More?
 Please find official Spring Batch Documentation [here](https://docs.spring.io/spring-batch/4.1.x/reference/html/index-single.html).
