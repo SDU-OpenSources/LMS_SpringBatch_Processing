@@ -6,7 +6,7 @@ Spring Batch is a open source framework for enterprise batch processing. This ba
 ## Steps
 Each step in Spring Batch consists of Read-Process-Write process for which we need to implement ItemReader, ItemProcessor and ItemWriter respectively.
 
-## SpringBatch-LMS
+## Project
 In this repository, a basic implementation of Spring Batch is created where a simple job of updating status is implemented.
 
 | Class | Description |
