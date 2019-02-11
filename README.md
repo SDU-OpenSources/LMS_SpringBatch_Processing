@@ -5,15 +5,16 @@ Spring Batch is a open source framework for enterprise batch processing. This ba
 
 ## Steps
 Each step in Spring Batch consists of Read-Process-Write process for which we need to implement ItemReader, ItemProcessor and ItemWriter respectively.
+JobLauncher is responsible for starting the job and executing all the Steps chained together.
 
 ## Project
-In this repository, a basic implementation of Spring Batch is created where a simple job of updating status is implemented.
+In this repository, a basic implementation of Spring Batch is created where a simple job of updating host system status is implemented.
 
 | Class | Description |
 | --- | --- |
 | [App.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/App.java) | Application Driving Class with Job Launcher |
 | [BatchConfiguration.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/BatchConfiguration.java) | Spring Batch Configuration class with ItemReader, ItemProcessor, ItemWriter and DataSource Beans |
-| [HostSystemStatusItemReader.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/HostSystemStatusItemReader.java) | Custom Reader Class with List of POJOs |
+| [HostSystemStatusItemReader.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/HostSystemStatusItemReader.java) | Custom Reader Class with list of POJOs to be processed |
 | [HostSystemStatusItemProcessor.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/HostSystemStatusItemProcessor.java) | Custom Processor where any massaging can be done over input data |
 | [HostSystemStatusItemWriter.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/HostSystemStatusItemWriter.java) | Custom Writer Class which can be used to perform any user defined operations for write phase |
 | [HostSystemStatusPojo.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/HostSystemStatusPojo.java) | Typical Pojo class |
@@ -36,23 +37,24 @@ mvn install:install-file -Dfile="Path/To/ojdbc7.jar" -DgroupId=com.oracle -Darti
 ```
 
 ### Configuration
-Enter Oracle Database Details for LMS Schema in class [BatchConfiguration.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/0de077aef05aa43fefdc328cac533579052bf837/LMS_BatchProcessing/src/main/java/main/BatchConfiguration.java#L108-L110)(Lines 108-110) inside DataSource Bean.
+Enter Oracle Database Details for LMS Schema in class [BatchConfiguration.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/0de077aef05aa43fefdc328cac533579052bf837/LMS_BatchProcessing/src/main/java/main/BatchConfiguration.java#L108-L110)(lines 108-110) inside DataSource Bean.
 
 ### Execution
-Execute [App.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/App.java).
+Run [App.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/LMS_BatchProcessing/src/main/java/main/App.java).
 #### Before Execution
 <p align="center"> 
 <img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Before%20Batch.JPG">
 </p>
 
 #### After Execution
+FLG_GLSTATUS and FLG_GLSUBSTATUS is updated from "ONLINE" to "BATCH" and "EOD STARTED" respectively.
 <p align="center"> 
 <img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/After%20Batch.JPG">
 </p>
 
 ### Spring Batch Tables
-Spring Batch Execution automatically creates several tables in DB Schema during Batch execution.
-To Learn more about these Meta-Data Tables, Please refer to official brief doc [here](https://docs.spring.io/spring-batch/trunk/reference/html/metaDataSchema.html).
+Spring Batch automatically creates several meta-data tables in DB Schema during Batch execution for tracking purposes.
+To Learn more about these Meta-Data Tables, Please refer to this concise official doc [here](https://docs.spring.io/spring-batch/trunk/reference/html/metaDataSchema.html).
 
 #### Table BATCH_JOB_INSTANCE
 <p align="center"> 
