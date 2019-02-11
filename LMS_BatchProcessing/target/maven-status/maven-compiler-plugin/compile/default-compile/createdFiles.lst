@@ -1,0 +1,8 @@
+main\HostSystemStatusItemWriter.class
+main\App.class
+main\HostSystemStatusItemProcessor.class
+main\HostSystemStatusItemReader.class
+main\HostSystemStatusPojo.class
+META-INF\maven\com.polaris.cash.lms\batchprocessing\pom.xml
+main\BatchConfiguration.class
+META-INF\maven\com.polaris.cash.lms\batchprocessing\pom.properties
