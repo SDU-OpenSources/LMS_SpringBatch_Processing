@@ -28,6 +28,7 @@ Import the project as an existing maven project in Eclipse.
 
 #### Fixing ojdbc7.jar Dependency
 If maven build gives missing artifact exception for OJDBC Library :
+
 Download [ojdbc7.jar](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/master/ojdbc7.jar) and execute following command by providing path to the download jar in command prompt.
 
 ```
@@ -52,6 +53,7 @@ Execute [App.java](https://github.com/SDU-OpenSources/SpringBatch-LMS/blob/maste
 ### Spring Batch Tables
 Spring Batch Execution automatically creates several tables in DB Schema during Batch execution.
 To Learn more about these Meta-Data Tables, Please refer to official brief doc [here](https://docs.spring.io/spring-batch/trunk/reference/html/metaDataSchema.html).
+
 #### Table BATCH_JOB_INSTANCE
 <p align="center"> 
 <img src="https://raw.githubusercontent.com/SDU-OpenSources/SpringBatch-LMS/master/Illustrations/Table_BATCH_JOB_INSTANCE.JPG">
@@ -83,4 +85,4 @@ To Learn more about these Meta-Data Tables, Please refer to official brief doc [
 </p>
 
 ## Read More?
-Please find official Spring Batch Documentation [here](https://docs.spring.io/spring-batch/4.1.x/reference/html/index-single.html).
+Please find official Spring Batch documentation [here](https://docs.spring.io/spring-batch/4.1.x/reference/html/index-single.html).
